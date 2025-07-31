@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Config with flake and home-manager";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
@@ -19,11 +19,24 @@
       };
     in {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system; };
-        
         modules = [
-          ./configuration.nix
+          ./hosts/desktop/configuration.nix
+        ];
+      };
+
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs system; };
+        modules = [
+          ./hosts/laptop/configuration.nix
+        ];
+      };
+
+      virtualbox = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs system; };
+        modules = [
+          ./hosts/virtualbox/configuration.nix
         ];
       };
     };
