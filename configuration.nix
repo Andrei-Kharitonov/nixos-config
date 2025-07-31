@@ -2,13 +2,23 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.home-manager
     ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      andrei = import ./home.nix;
+    };
+  };   
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
@@ -26,7 +36,7 @@
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/Saratov";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -47,8 +57,8 @@
   
 
   # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
+  services.xserver.xkb.layout = "us,ru";
+  services.xserver.xkb.options = "grp:ctrl_shift_toggle";
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -74,11 +84,13 @@
   };
 
   # If running on VirtualBox
-  boot.extraModulePackages = with config.boot.kernelPackages;
-  [virtualboxGuestAdditions];
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    virtualboxGuestAdditions
+  ];
   boot.kernelModules = [ "vboxguest" "vboxsf" "vboxvideo" ];
 
   programs.firefox.enable = true;
+  #nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
