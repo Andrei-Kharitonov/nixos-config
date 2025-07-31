@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ./programs-module.nix
+    ./sys-packages.nix
   ];
-
-  programs-module.enable = true;
 }

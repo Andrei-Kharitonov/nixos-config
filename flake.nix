@@ -32,13 +32,6 @@
           ./hosts/laptop/configuration.nix
         ];
       };
-
-      virtualbox = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs system; };
-        modules = [
-          ./hosts/virtualbox/configuration.nix
-        ];
-      };
     };
   };
 }

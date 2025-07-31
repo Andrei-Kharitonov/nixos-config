@@ -1,29 +1,22 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+  imports = [
+    ./../../modules/home/base-packages.nix
+  ];
+
   home.username = "andrei";
   home.homeDirectory = "/home/andrei";
 
   # Please read the comment before changing.
   home.stateVersion = "25.05";
 
-  home.packages = with pkgs; [
-    hello
-    git
-  ];
-
-  programs.git ={
-    enable = true;
-    userEmail = "test@gmail.com";
-    userName = "andrei";
-  };
-
   # For dotfiles
   home.file = {};
 
   # Manage enviroment variables
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    # EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.
