@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ./../../modules/system-config.nix
     ./../../modules/system-pkgs.nix
+    ./../../modules/kde-pkgs.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 

@@ -23,11 +23,21 @@
 
   # Desktop manager
   services = {
-    xserver = {
-      enable = true;
-      desktopManager.xfce.enable = true;
+    desktopManager.plasma6.enable = true;
+    displayManager = {
+      sddm.enable = true;
+      sddm.wayland.enable = true;
     };
-    displayManager.defaultSession = "xfce";
+  };
+
+  # Keyboard layout
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us,ru";
+      variant = "";
+      options = "grp:alt_space_toggle";
+    };
   };
 
   # Audio
