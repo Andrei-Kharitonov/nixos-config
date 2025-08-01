@@ -1,17 +1,28 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs; [
-    git
-    tree
-    htop
-  ];
+  options.base-packages = {
+    enable = lib.mkEnableOption "enable base packages module";
+  };
 
-  programs = {
-    git = {
-      enable = true;
-      userEmail = "test@gmail.com";
-      userName = "andrei";
+  config = lib.mkIf config.base-packages.enable {
+    home.packages = with pkgs; [
+      git # version control system
+      nekoray # proxy connection gui client
+      alacritty # terminal emulator
+      neovim # vim but better
+    ];
+
+    programs = {
+      git = {
+        enable = true;
+        userEmail = "test@gmail.com";
+        userName = "andrei";
+      };
+
+      alacritty = {
+        enable = true;
+      };
     };
   };
 }

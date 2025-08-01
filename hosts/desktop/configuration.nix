@@ -14,10 +14,14 @@
   # Home manager import config
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
+    useUserPackages = true;
+    useGlobalPkgs = true;
     users = {
       andrei = import ./home.nix;
     };
   };  
+
+  networking.hostName = "desktop";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

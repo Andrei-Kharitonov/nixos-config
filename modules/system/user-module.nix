@@ -3,6 +3,6 @@
 {
   users.users.andrei = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "vboxusers" "vboxsf" ];
   };
 }

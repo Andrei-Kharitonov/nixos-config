@@ -3,5 +3,6 @@
 {
   imports = [
     ./sys-packages.nix
+    ./programs-setup.nix
   ];
 }

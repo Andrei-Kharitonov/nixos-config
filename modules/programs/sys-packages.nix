@@ -2,19 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    nekoray
+    vim # terminal text editor
+    wget # cli utility for downloading from internet
+    tree # display tree directory structure
+    htop # terminal task manager
+    nh # yet another nix helper
+    zsh # shell
   ];
-
-  programs = {
-    firefox = {
-      enable = true;
-    };
-
-    nekoray = {
-      enable = true;
-      tunMode.enable = true;
-    };
-  };
 }
