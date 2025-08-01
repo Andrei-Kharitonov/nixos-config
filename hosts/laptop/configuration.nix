@@ -21,10 +21,7 @@
     };
   };  
 
-  networking.hostName = "desktop";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  networking.hostName = "laptop";
 
   
   # Don't change this!
