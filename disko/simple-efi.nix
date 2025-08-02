@@ -12,7 +12,7 @@
               size = "500M";
               content = {
                 type = "filesystem";
-                format = "vfat";
+                format = "vfat"; # fat32
                 mountpoint = "/boot";
                 mountOptions = [ "umask=0077" ];
               };

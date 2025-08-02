@@ -10,6 +10,7 @@
     htop # terminal task manager
     nh # yet another nix helper
     zsh # shell
+    fastfetch # system info
   ];
 
   programs = {

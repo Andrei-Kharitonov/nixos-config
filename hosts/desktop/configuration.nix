@@ -27,6 +27,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable bluetooth on power up by default
+  hardware.bluetooth.powerOnBoot = true;
+
   
   # Don't change this!
   system.stateVersion = "25.05"; # Did you read the comment?
