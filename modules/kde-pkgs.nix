@@ -1,8 +1,12 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  environment.systemPackages = with pkgs;
-  [
+  environment.systemPackages = with pkgs; [
     # KDE
     kdePackages.kcalc # Calculator
     kdePackages.kcharselect # Tool to select and copy special characters from all installed fonts

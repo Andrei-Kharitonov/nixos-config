@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -6,12 +11,17 @@
     wget # cli utility for downloading from internet
     nekoray # proxy gui client
     nh # yet another nix helper
+    nil # nix language server
+    nixfmt-rfc-style # nix formater
   ];
 
   programs = {
     firefox = {
       enable = true;
-      languagePacks = [ "en-US" "ru" ];
+      languagePacks = [
+        "en-US"
+        "ru"
+      ];
     };
 
     nekoray = {

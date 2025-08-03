@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -12,11 +17,10 @@
   home.homeDirectory = "/home/andrei";
 
   # For dotfiles
-  home.file = {};
+  home.file = { };
 
   # Manage enviroment variables
-  home.sessionVariables = {};
-
+  home.sessionVariables = { };
 
   # Don't change this!
   home.stateVersion = "25.05";
