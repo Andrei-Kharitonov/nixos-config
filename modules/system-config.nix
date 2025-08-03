@@ -27,6 +27,9 @@
   };
   services.openssh.enable = true;
 
+  # Unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # Desktop manager
   services = {
     desktopManager.plasma6.enable = true;
@@ -80,4 +83,8 @@
       extraGroups = [ "wheel" "networkmanager" ];
     };
   };
+
+  # Shell
+  programs.zsh.enable = true;
+  users.users.andrei.shell = pkgs.zsh;
 }

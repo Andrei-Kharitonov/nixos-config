@@ -22,7 +22,7 @@
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     # plasma-browser-integration # Comment out this line if you use KDE Connect
     # kdepim-runtime # Unneeded if you use Thunderbird, etc.
-    konsole # Comment out this line if you use KDE's default terminal app
-    oxygen # KDE theme
+    # konsole # Comment out this line if you use KDE's default terminal app
+    # oxygen # KDE theme
   ];
 }

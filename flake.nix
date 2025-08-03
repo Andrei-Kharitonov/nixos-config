@@ -13,10 +13,7 @@
   outputs = { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      pkgs = import nixpkgs { inherit system; };
     in {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
