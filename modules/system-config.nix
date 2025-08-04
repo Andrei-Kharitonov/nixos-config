@@ -19,6 +19,8 @@
       efiSysMountPoint = "/boot";
     };
   };
+  # tun mode for proxy
+  boot.kernelModules = [ "tun" ];
 
   # Network
   systemd.network = {
@@ -28,7 +30,6 @@
   };
   networking = {
     networkmanager.enable = true;
-    firewall.enable = true;
   };
   services.openssh.enable = true;
 

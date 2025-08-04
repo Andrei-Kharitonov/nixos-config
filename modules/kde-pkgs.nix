@@ -14,6 +14,7 @@
     kdePackages.kolourpaint # Easy-to-use paint program
     kdePackages.ksystemlog # KDE SystemLog Application
     kdePackages.sddm-kcm # Configuration module for SDDM
+    kdePackages.networkmanager-qt
 
     kdiff3 # Compares and merges 2 or 3 files or directories
     hardinfo2 # System information and benchmarks for Linux systems
