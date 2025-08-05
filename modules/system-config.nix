@@ -19,17 +19,14 @@
       efiSysMountPoint = "/boot";
     };
   };
-  # tun mode for proxy
-  boot.kernelModules = [ "tun" ];
+  boot.kernelModules = [ "tun" ]; # TUN for proxy
 
   # Network
-  systemd.network = {
-    enable = true;
-    # Keep this for fast wifi autoconnection (idk why this work)
-    wait-online.timeout = 2;
-  };
   networking = {
     networkmanager.enable = true;
+    firewall.enable = true;
+    firewall.checkReversePath = "loose";
+    wireguard.enable = true;
   };
   services.openssh.enable = true;
 
@@ -96,4 +93,7 @@
   # Shell
   programs.zsh.enable = true;
   users.users.andrei.shell = pkgs.zsh;
+
+  # Proxy cli
+  services.sing-box.enable = true;
 }
