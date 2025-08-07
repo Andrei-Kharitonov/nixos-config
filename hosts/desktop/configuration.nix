@@ -12,6 +12,7 @@
     ../../modules/system-config.nix
     ../../modules/system-pkgs.nix
     ../../modules/kde-pkgs.nix
+    ../../modules/sddm-theme.nix
     ../../modules/fonts.nix
     inputs.home-manager.nixosModules.home-manager
   ];
