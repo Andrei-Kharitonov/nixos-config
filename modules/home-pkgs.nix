@@ -28,9 +28,12 @@
     alacritty = {
       enable = true;
       settings = {
-        window.padding = {
-          x = 10;
-          y = 5;
+        window = {
+          dynamic_title = false;
+          padding = {
+            x = 10;
+            y = 5;
+          };
         };
       };
     };
