@@ -8,7 +8,7 @@
 let
   background-package = pkgs.stdenvNoCC.mkDerivation {
     name = "background-image";
-    src = ../resources/nix-wallpaper-nineish-catppuccin-mocha-alt.png;
+    src = ../imgs/wallpapers/nix-wallpaper-catppuccin.png;
     dontUnpack = true;
     installPhase = ''
       cp $src $out
@@ -16,7 +16,6 @@ let
   };
 in
 {
-  #services.xserver.enable = true;
   services.displayManager.sddm = {
     enable = lib.mkDefault true;
     theme = "breeze";

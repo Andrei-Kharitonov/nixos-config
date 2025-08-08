@@ -8,6 +8,7 @@
 {
   imports = [
     ./../../modules/home-pkgs.nix
+    ../../modules/home-dotfiles.nix
   ];
 
   # Let Home Manager install and manage itself.
@@ -15,9 +16,6 @@
 
   home.username = "andrei";
   home.homeDirectory = "/home/andrei";
-
-  # For dotfiles
-  home.file = { };
 
   # Manage enviroment variables
   home.sessionVariables = { };
