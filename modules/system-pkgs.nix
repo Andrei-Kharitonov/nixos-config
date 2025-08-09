@@ -24,5 +24,15 @@
         "ru"
       ];
     };
+
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+    };
+    # games optimization
+    steam.gamescopeSession.enable = true;
+    gamemode.enable = true;
   };
 }

@@ -16,6 +16,14 @@
     btop # terminal task manager
     lf # terminal file manager
     fastfetch # system info
+    qmk # keyboard firmware
+    vial # qmk keyboard configuring
+    telegram-desktop # messenger
+    discord # discord
+    wine # run windows programs
+    git-graph # git graph branches
+    tor-browser # anonymous browser
+    flameshot # screenshot
   ];
 
   programs = {
