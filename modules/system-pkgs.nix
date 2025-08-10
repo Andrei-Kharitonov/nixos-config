@@ -14,6 +14,8 @@
     nixfmt-rfc-style # nix formater
     hiddify-app # proxy gui client
     sing-box # universal proxy platform
+    xclip # copy-paste for x
+    wl-clipboard # copy-paste for wayland
   ];
 
   programs = {

@@ -9,7 +9,6 @@
   home.packages = with pkgs; [
     git # version control system
     alacritty # terminal emulator
-    neovim # vim but better
     vscode # IDE
     libreoffice # office
     tree # display tree directory structure
@@ -39,8 +38,12 @@
         window = {
           dynamic_title = false;
           padding = {
-            x = 10;
-            y = 5;
+            x = 4;
+            y = 4;
+          };
+          dimensions = {
+            columns = 80;
+            lines = 30;
           };
         };
       };
@@ -75,6 +78,12 @@
       oh-my-zsh = {
         enable = true;
       };
+    };
+
+    # neovim
+    nixvim = {
+      enable = true;
+      colorschemes.catppuccin.enable = true;
     };
   };
 }
