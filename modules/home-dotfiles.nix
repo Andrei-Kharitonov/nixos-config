@@ -6,7 +6,6 @@
 }:
 
 {
-  # For dotfiles
   home.file = {
     # wallpapers
     "Pictures/wallpapers" = {
@@ -16,7 +15,13 @@
 
     # zsh powerlevel10k theme
     ".p10k.zsh" = {
-      source = ../dotfiles/.p10k.zsh;
+      source = ../dotfiles/zsh/.p10k.zsh;
+    };
+
+    # neovim config
+    ".config/nvim" = {
+      source = ../dotfiles/nvim;
+      recursive = true;
     };
   };
 }

@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  inputs,
   ...
 }:
 
@@ -10,7 +9,6 @@
   imports = [
     ../../modules/home-pkgs.nix
     ../../modules/home-dotfiles.nix
-    inputs.nixvim.homeModules.nixvim
   ];
 
   # Let Home Manager install and manage itself.
