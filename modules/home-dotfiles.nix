@@ -23,5 +23,11 @@
       source = ../dotfiles/nvim;
       recursive = true;
     };
+
+    # kde config konsave
+    ".config/konsave" = {
+      source = ../dotfiles/konsave;
+      recursive = true;
+    };
   };
 }

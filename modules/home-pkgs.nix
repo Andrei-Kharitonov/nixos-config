@@ -24,6 +24,7 @@
     git-graph # git graph branches
     tor-browser # anonymous browser
     flameshot # screenshot
+    konsave # kde config manager
   ];
 
   programs = {
