@@ -16,6 +16,10 @@
     sing-box # universal proxy platform
     xclip # copy-paste for x
     wl-clipboard # copy-paste for wayland
+    nodejs_24 # javascript
+    yarn # dependency management for javascript
+    python314 # python
+    gcc # C, C++
   ];
 
   programs = {
