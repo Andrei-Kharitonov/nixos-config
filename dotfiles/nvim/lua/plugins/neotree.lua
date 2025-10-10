@@ -10,12 +10,13 @@ return {
   lazy = false,
   opts = {
     window = {
-    position = "left",
-    width = 37,
+      position = "left",
+      width = 30,
     },
-    source_selector = {
-      winbar = true,
-      statusline = true
-    }
+    filesystem = {
+      follow_current_file = {
+        enabled = true,
+      },
+    },
   }
 }

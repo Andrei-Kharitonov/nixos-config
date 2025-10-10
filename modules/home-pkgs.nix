@@ -25,6 +25,7 @@
     tor-browser # anonymous browser
     flameshot # screenshot
     konsave # kde config manager
+    lazygit # git terminal ui
   ];
 
   programs = {

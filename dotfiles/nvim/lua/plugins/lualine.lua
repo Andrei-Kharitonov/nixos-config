@@ -7,23 +7,41 @@ return {
   opts = {
     options = {
       disabled_filetypes = {
-        "neo-tree"
+        winbar = {'neo-tree'}
       },
     },
     -- bottom line
     sections = {
-      lualine_a = {'mode'},
-      lualine_b = {'branch', 'diff'},
-      lualine_c = {'diagnostics'},
-      lualine_x = {'searchcount'},
-      lualine_y = {{'filetype', icon_only = true}, 'progress'},
-      lualine_z = {'location'}
+      lualine_a = {
+        {'mode', cond = function() return vim.bo.filetype ~= 'neo-tree' end}
+      },
+      lualine_b = {
+        'branch',
+        {'diff', cond = function() return vim.bo.filetype ~= 'neo-tree' end}
+      },
+      lualine_c = {
+        {'diagnostics', cond = function() return vim.bo.filetype ~= 'neo-tree' end}
+      },
+      lualine_x = {
+        {'searchcount', cond = function() return vim.bo.filetype ~= 'neo-tree' end}
+      },
+      lualine_y = {
+        {'filetype', icon_only = true, cond = function() return vim.bo.filetype ~= 'neo-tree' end},
+        {'progress', cond = function() return vim.bo.filetype ~= 'neo-tree' end}
+      },
+      lualine_z = {
+        {'location', cond = function() return vim.bo.filetype ~= 'neo-tree' end}
+      }
     },
     inactive_sections = {
       lualine_a = {},
       lualine_b = {},
-      lualine_c = {},
-      lualine_x = {'location'},
+      lualine_c = {
+        {'diagnostics', cond = function() return vim.bo.filetype ~= 'neo-tree' end}
+      },
+      lualine_x = {
+        {'location', cond = function() return vim.bo.filetype ~= 'neo-tree' end}
+      },
       lualine_y = {},
       lualine_z = {}
     },
@@ -39,10 +57,10 @@ return {
     inactive_winbar = {
       lualine_a = {},
       lualine_b = {},
-      lualine_c = {'filename'},
+      lualine_c = {{'filename', path = 3, shorting_target = 16}},
       lualine_x = {},
       lualine_y = {},
       lualine_z = {}
-    },
+    }
   }
 }
