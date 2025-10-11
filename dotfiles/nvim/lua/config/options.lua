@@ -10,3 +10,4 @@ vim.opt.shiftwidth = 2
 vim.opt.smarttab = true
 vim.opt.termguicolors = true
 vim.opt.showtabline = 2
+vim.opt.showmode = false

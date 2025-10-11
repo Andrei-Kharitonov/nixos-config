@@ -1,10 +1,13 @@
 -- Start screen
 return {
   'nvimdev/dashboard-nvim',
+  dependencies = {
+    'nvim-tree/nvim-web-devicons'
+  },
   event = 'VimEnter',
   config = function()
     require('dashboard').setup {
-      theme = 'hyper',
+      theme = 'doom',
       shortcut_type = 'number',
       hide = {
         statusline = false,
@@ -12,30 +15,51 @@ return {
         winbar = true
       },
       config = {
-        shortcut = {
+        header = {
+          '  N E O V I M  ',
+          '',
+          '',
+        },
+        center = {
           {
-            icon = ' ',
-            icon_hl = '@variable',
-            desc = 'Files',
-            group = 'Label',
+            icon = ' ',
+            desc = 'Projects',
+            action = 'NeovimProjectHistory',
+            key_format = '  %s',
+            key = 'p',
+          },
+          {
+            icon = ' ',
+            desc = 'Find files',
             action = 'Telescope find_files',
+            key_format = '  %s',
             key = 'f',
           },
           {
-            icon = ' ',
-            icon_hl = '@property',
-            desc = 'Projects',
-            group = 'Label',
-            action = 'Telescope projects',
-            key = 'p',
+            icon = ' ',
+            desc = 'Last files',
+            action = 'Telescope oldfiles',
+            key_format = '  %s',
+            key = 'l',
           },
+          {
+            icon = ' ',
+            desc = 'New file',
+            action = 'enew',
+            key_format = '  %s',
+            key = 'n',
+          },
+          {
+            icon = ' ',
+            desc = 'Quit',
+            action = 'q',
+            key_format = '  %s',
+            key = 'q',
+          }
         },
-        packages = { enable = false },
-        project = { enable = false, limit = 4, icon = 'Projects', label = '', action = 'Telescope projects cwd=~' },
-        mru = { enable = true, limit = 9, icon = 'Recent files', label = '', cwd_only = true },
         footer = {},
+        vertical_center = true,
       }
     }
-  end,
-  dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  end
 }

@@ -7,7 +7,7 @@ return {
   opts = {
     options = {
       disabled_filetypes = {
-        winbar = {'neo-tree'}
+        winbar = {'neo-tree', 'dashboard'}
       },
     },
     -- bottom line
