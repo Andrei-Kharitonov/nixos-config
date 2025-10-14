@@ -5,37 +5,41 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim'
   },
-  opts = {
-    defaults = {
-      layout_strategy = 'horizontal',
-      preview = {
-        hide_on_startup = true
-      },
-      mappings = {
-        i = {
-          ["<C-p>"] = require('telescope.actions.layout').toggle_preview,
-          ["<C-j>"] = 'move_selection_next',
-          ["<C-k>"] = 'move_selection_previous',
-          ["<C-h>"] = 'preview_scrolling_up',
-          ["<C-l>"] = 'preview_scrolling_down',
-          ["<C-q>"] = 'close',
+  config = function()
+    require('telescope').setup({
+      defaults = {
+        layout_strategy = 'horizontal',
+        sorting_strategy = 'ascending',
+        preview = {
+          hide_on_startup = true
         },
-        n = {
-          ["<C-p>"] = require('telescope.actions.layout').toggle_preview,
-          ["<C-j>"] = 'move_selection_next',
-          ["<C-k>"] = 'move_selection_previous',
-          ["<C-h>"] = 'preview_scrolling_up',
-          ["<C-l>"] = 'preview_scrolling_down',
-          ["q"] = 'close',
+        mappings = {
+          i = {
+            ["<C-p>"] = require('telescope.actions.layout').toggle_preview,
+            ["<C-j>"] = 'move_selection_next',
+            ["<C-k>"] = 'move_selection_previous',
+            ["<C-h>"] = 'preview_scrolling_up',
+            ["<C-l>"] = 'preview_scrolling_down',
+            ["<C-q>"] = 'close',
+          },
+          n = {
+            ["<C-p>"] = require('telescope.actions.layout').toggle_preview,
+            ["<C-j>"] = 'move_selection_next',
+            ["<C-k>"] = 'move_selection_previous',
+            ["<C-h>"] = 'preview_scrolling_up',
+            ["<C-l>"] = 'preview_scrolling_down',
+            ["q"] = 'close',
+          },
+        },
+        layout_config = {
+          horizontal = {
+            width = 0.6,
+            height = 0.7,
+            preview_cutoff = 60,
+            prompt_position = 'top',
+          }
         },
       },
-      layout_config = {
-        horizontal = {
-          width = 0.6,
-          height = 0.7,
-          preview_cutoff = 60
-        }
-      },
-    },
-  }
+    })
+  end
 }

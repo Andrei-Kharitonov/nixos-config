@@ -20,6 +20,7 @@
     yarn # dependency management for javascript
     python314 # python
     gcc # C, C++
+    ripgrep # directory regex searcher
   ];
 
   programs = {
