@@ -19,7 +19,7 @@ return {
         indicator = {
           style = "underline"
         },
-        separator_style = "thick",
+        separator_style = {"", " "},
       },
     }
   end

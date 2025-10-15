@@ -23,6 +23,13 @@ vim.keymap.set("n", "<Leader>fp", ":NeovimProjectHistory<CR>", { silent = true }
 vim.keymap.set("n", "<Leader>w", ":WinShift<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>r", ":Registers<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>`", ":ToggleTerm direction=horizontal<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>m", ":TSJToggle<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>M", ":lua require('treesj').toggle({ split = {recursive = true} })<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>hh", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>ha", ":lua require('harpoon.mark').add_file()<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>hn", ":lua require('harpoon.ui').nav_next()<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>hp", ":lua require('harpoon.ui').nav_prev()<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>z", ":ZenMode<CR>", { silent = true })
 
 -- Navigation between terminal and windows
 function _G.set_terminal_keymaps()

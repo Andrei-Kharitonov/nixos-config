@@ -2,11 +2,14 @@
 return {
   "tversteeg/registers.nvim",
   config = function()
-    require("registers").setup({
+    local registers = require("registers")
+    registers.setup({
       bind_keys = {
         normal = false,
         visual = false,
         insert = false,
+        ["<Leader>"] = registers.close_window(),
+        ["<C-q>"] = registers.close_window(),
       },
       show_empty = false,
       show_register_types = false,

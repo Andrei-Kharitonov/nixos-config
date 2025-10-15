@@ -11,7 +11,7 @@ return {
   opts = {
     window = {
       position = "left",
-      width = 30,
+      width = 32,
     },
     filesystem = {
       follow_current_file = {
