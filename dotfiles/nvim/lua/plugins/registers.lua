@@ -14,6 +14,9 @@ return {
       show_empty = false,
       show_register_types = false,
       system_clipboard = false,
+      events = {
+        on_register_highlighted = false
+      },
       symbols = {
         newline = "⏎",
         space = " ",
