@@ -21,6 +21,8 @@
     python314 # python
     gcc # C, C++
     ripgrep # directory regex searcher
+    unzip # extract .zip
+    cargo # rust projects downloader
   ];
 
   programs = {
@@ -31,6 +33,9 @@
         "ru"
       ];
     };
+
+    # run unpatched dynamic binaries on nixos.
+    nix-ld.enable = true;
 
     steam = {
       enable = true;
