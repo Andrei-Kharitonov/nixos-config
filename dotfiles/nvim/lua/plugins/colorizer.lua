@@ -1,17 +1,16 @@
 -- Preview colors
 return {
-  'norcalli/nvim-colorizer.lua',
-  event = 'VeryLazy',
+  "norcalli/nvim-colorizer.lua",
   config = function()
-    require('colorizer').setup({
-      'css',
-      'scss',
-      'sass',
-      'javascript',
-      'typescript',
-      'html',
-      'lua',
-      'python',
+    require("colorizer").setup({
+      "css",
+      "scss",
+      "sass",
+      "javascript",
+      "typescript",
+      "html",
+      "lua",
+      "python",
     })
-  end
+  end,
 }

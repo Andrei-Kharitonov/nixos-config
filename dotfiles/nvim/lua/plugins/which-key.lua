@@ -1,21 +1,21 @@
 -- Keymap viewer
 return {
   "folke/which-key.nvim",
-  event = "VeryLazy",
   config = function()
     require("which-key").setup({
       triggers = {},
       icons = {
-        mappings = false
+        mappings = false,
       },
       plugins = {
         marks = false,
         registers = false,
-        spelling = { -- z= to check spelling
+        -- z= to check spelling
+        spelling = {
           enabled = true,
           suggestions = 10,
         },
       },
     })
-  end
+  end,
 }

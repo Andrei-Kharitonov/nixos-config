@@ -5,7 +5,6 @@ return {
     { "nvim-lua/plenary.nvim" },
     { "Shatur/neovim-session-manager" },
   },
-  event = 'VeryLazy',
   opts = {
     projects = {
       "~/projects/*",
@@ -22,7 +21,7 @@ return {
       -- insert mode: Ctrl+d
       i = "<C-d>",
       -- normal mode: d
-      n = "d"
+      n = "d",
     },
   },
   init = function()

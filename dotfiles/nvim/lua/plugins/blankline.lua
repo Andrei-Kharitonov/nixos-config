@@ -2,11 +2,11 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
   main = "ibl",
-  event = 'VimEnter',
+  event = "VeryLazy",
   config = function()
     require("ibl").setup({
       indent = {
-        char = '▏',
+        char = "▏",
         highlight = "LspCodeLens",
       },
       whitespace = {
@@ -20,8 +20,8 @@ return {
           "dashboard",
           "neo-tree",
           "notify",
-        }
-      }
+        },
+      },
     })
-  end
+  end,
 }
