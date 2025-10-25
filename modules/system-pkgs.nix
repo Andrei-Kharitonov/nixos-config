@@ -23,6 +23,7 @@
     ripgrep # directory regex searcher
     unzip # extract .zip
     cargo # rust projects downloader
+    tmux # multiple terminals in window
   ];
 
   programs = {
@@ -46,5 +47,14 @@
     # games optimization
     steam.gamescopeSession.enable = true;
     gamemode.enable = true;
+
+    tmux = {
+      enable = true;
+      clock24 = true;
+      plugins = with pkgs; [
+        tmuxPlugins.catppuccin
+        tmuxPlugins.vim-tmux-navigator
+      ];
+    };
   };
 }

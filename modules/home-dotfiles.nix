@@ -29,5 +29,10 @@
       source = ../dotfiles/konsave;
       recursive = true;
     };
+
+    # tmux config
+    ".tmux.conf" = {
+      source = ../dotfiles/tmux/.tmux.conf;
+    };
   };
 }
