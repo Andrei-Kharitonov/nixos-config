@@ -37,6 +37,7 @@
 
     alacritty = {
       enable = true;
+      theme = "catppuccin_mocha";
       settings = {
         window = {
           dynamic_title = false;
