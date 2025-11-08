@@ -35,6 +35,9 @@
         email = "89729599+Andrei-Kharitonov@users.noreply.github.com";
         name = "Andrei-Kharitonov";
       };
+      extraConfig = {
+        credential.helper = "";
+      };
     };
 
     alacritty = {

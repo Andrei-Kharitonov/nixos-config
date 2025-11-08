@@ -1,0 +1,15 @@
+[Desktop Entry]
+Comment=Xray proxy client
+Exec=pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY /home/andrei/appimages/hiddify.AppImage
+GenericName=
+Icon=/home/andrei/Pictures/icons/hiddify-logo.png
+Name=Hiddify
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

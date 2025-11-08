@@ -34,5 +34,15 @@
     ".tmux.conf" = {
       source = ../dotfiles/tmux/.tmux.conf;
     };
+
+    # hiddify proxy client
+    # download AppImage from https://github.com/hiddify/hiddify-app/releases/
+    # and put it to ~/appimages/hiddify.AppImage
+    ".local/share/applications/Hiddify.desktop" = {
+      source = ../dotfiles/hiddify/Hiddify.desktop;
+    };
+    "Pictures/icons/hiddify-logo.png" = {
+      source = ../dotfiles/hiddify/hiddify-logo.png;
+    };
   };
 }

@@ -12,9 +12,6 @@
     nh # yet another nix helper
     nil # nix language server
     nixfmt-rfc-style # nix formater
-    # hiddify-app # proxy gui client [removed]
-    sing-box # universal proxy platform
-    nekoray # proxy gui client
     xclip # copy-paste for x
     wl-clipboard # copy-paste for wayland
     nodejs_24 # javascript
@@ -25,7 +22,6 @@
     unzip # extract .zip
     cargo # rust projects downloader
     tmux # multiple terminals in window
-    appimage-run # run .AppImage
   ];
 
   programs = {
@@ -47,6 +43,9 @@
 
     appimage.enable = true;
     appimage.binfmt = true;
+    appimage.package = pkgs.appimage-run.override {
+      extraPkgs = pkgs: [ pkgs.libepoxy ];
+    };
 
     steam = {
       enable = true;

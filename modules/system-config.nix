@@ -19,7 +19,6 @@
       efiSysMountPoint = "/boot";
     };
   };
-  boot.kernelModules = [ "tun" ]; # TUN for proxy
 
   # Network
   networking = {
@@ -93,7 +92,4 @@
   # Shell
   programs.zsh.enable = true;
   users.users.andrei.shell = pkgs.zsh;
-
-  # Proxy cli
-  services.sing-box.enable = true;
 }
