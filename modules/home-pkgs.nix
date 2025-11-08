@@ -14,25 +14,27 @@
     libreoffice # office
     tree # display tree directory structure
     btop # terminal task manager
-    lf # terminal file manager
     fastfetch # system info
     qmk # keyboard firmware
     vial # qmk keyboard configuring
     telegram-desktop # messenger
-    discord # discord
+    # discord # discord
     wine # run windows programs
     git-graph # git graph branches
     tor-browser # anonymous browser
     flameshot # screenshot
     konsave # kde config manager
     lazygit # git terminal ui
+    yazi # tui file explorer
   ];
 
   programs = {
     git = {
       enable = true;
-      userEmail = "89729599+Andrei-Kharitonov@users.noreply.github.com";
-      userName = "Andrei-Kharitonov";
+      settings.user = {
+        email = "89729599+Andrei-Kharitonov@users.noreply.github.com";
+        name = "Andrei-Kharitonov";
+      };
     };
 
     alacritty = {
@@ -78,9 +80,22 @@
       ];
       initContent = ''
         source ~/.p10k.zsh
+
+        # shell cd whith yazi
+        yazi_dir_navigation() {
+          local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+          yazi "$@" --cwd-file="$tmp"
+          if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+            cd -- "$cwd"
+          fi
+          rm -f -- "$tmp"
+        }
       '';
       oh-my-zsh = {
         enable = true;
+      };
+      shellAliases = {
+        lf = "yazi_dir_navigation";
       };
     };
   };

@@ -12,8 +12,9 @@
     nh # yet another nix helper
     nil # nix language server
     nixfmt-rfc-style # nix formater
-    hiddify-app # proxy gui client
+    # hiddify-app # proxy gui client [removed]
     sing-box # universal proxy platform
+    nekoray # proxy gui client
     xclip # copy-paste for x
     wl-clipboard # copy-paste for wayland
     nodejs_24 # javascript
@@ -24,6 +25,7 @@
     unzip # extract .zip
     cargo # rust projects downloader
     tmux # multiple terminals in window
+    appimage-run # run .AppImage
   ];
 
   programs = {
@@ -35,8 +37,16 @@
       ];
     };
 
+    nekoray = {
+      enable = true;
+      tunMode.enable = true;
+    };
+
     # run unpatched dynamic binaries on nixos.
     nix-ld.enable = true;
+
+    appimage.enable = true;
+    appimage.binfmt = true;
 
     steam = {
       enable = true;
