@@ -18,7 +18,7 @@
     qmk # keyboard firmware
     vial # qmk keyboard configuring
     telegram-desktop # messenger
-    # discord # discord
+    discord # discord
     wine # run windows programs
     git-graph # git graph branches
     tor-browser # anonymous browser
@@ -34,9 +34,6 @@
       settings.user = {
         email = "89729599+Andrei-Kharitonov@users.noreply.github.com";
         name = "Andrei-Kharitonov";
-      };
-      extraConfig = {
-        credential.helper = "";
       };
     };
 

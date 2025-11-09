@@ -18,12 +18,6 @@
       source = ../dotfiles/zsh/.p10k.zsh;
     };
 
-    # neovim config
-    ".config/nvim" = {
-      source = ../dotfiles/nvim;
-      recursive = true;
-    };
-
     # kde config konsave
     ".config/konsave" = {
       source = ../dotfiles/konsave;
