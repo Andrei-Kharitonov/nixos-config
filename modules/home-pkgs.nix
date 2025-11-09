@@ -8,7 +8,8 @@
 {
   home.packages = with pkgs; [
     git # version control system
-    alacritty # terminal emulator
+    kitty # terminal
+    kitty-themes # themes for kitty
     neovim # modern terminal text editor
     vscode # IDE
     libreoffice # office
@@ -26,6 +27,7 @@
     konsave # kde config manager
     lazygit # git terminal ui
     yazi # tui file explorer
+    yt-dlp # cli youtube video downloader
   ];
 
   programs = {
@@ -37,21 +39,15 @@
       };
     };
 
-    alacritty = {
+    kitty = {
       enable = true;
-      theme = "catppuccin_mocha";
+      themeFile = "Catppuccin-Mocha";
       settings = {
-        window = {
-          dynamic_title = false;
-          padding = {
-            x = 4;
-            y = 4;
-          };
-          dimensions = {
-            columns = 80;
-            lines = 30;
-          };
-        };
+        remember_window_size = "no";
+        initial_window_width = "96c";
+        initial_window_height = "32c";
+        window_padding_width = "2 4";
+        placement_strategy = "top-left";
       };
     };
 
