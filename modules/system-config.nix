@@ -90,6 +90,14 @@
     };
   };
 
+  # Swap file
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 4 * 1024; # 4G
+    }
+  ];
+
   # Shell
   programs.zsh.enable = true;
   users.users.andrei.shell = pkgs.zsh;
