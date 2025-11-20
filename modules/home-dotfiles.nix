@@ -13,11 +13,6 @@
       recursive = true;
     };
 
-    # zsh powerlevel10k theme
-    ".p10k.zsh" = {
-      source = ../dotfiles/zsh/.p10k.zsh;
-    };
-
     # kde config konsave
     ".config/konsave" = {
       source = ../dotfiles/konsave;
@@ -37,6 +32,12 @@
     };
     "Pictures/icons/hiddify-logo.png" = {
       source = ../dotfiles/hiddify/hiddify-logo.png;
+    };
+
+    # yazi config
+    ".config/yazi" = {
+      source = ../dotfiles/yazi;
+      recursive = true;
     };
   };
 }

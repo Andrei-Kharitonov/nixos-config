@@ -28,6 +28,8 @@
     lazygit # git terminal ui
     yazi # tui file explorer
     yt-dlp # cli youtube video downloader
+    fzf # fuzzy finder
+    zoxide # smart cd
   ];
 
   programs = {
@@ -62,42 +64,25 @@
       flake = "/home/andrei/nixos-config";
     };
 
+    zoxide = {
+      enable = true;
+      options = [
+        "--cmd cd" # use zoxide instead of cd
+      ];
+    };
+
     zsh = {
       enable = true;
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
       enableCompletion = true;
-      initContent = ''
-        # custom prompt line
-        autoload -Uz vcs_info promptinit
-        precmd() {
-          vcs_info
-          # new line after output
-          if [ -z "$NEW_LINE_BEFORE_PROMPT" ]; then
-            NEW_LINE_BEFORE_PROMPT=1
-          elif [ "$NEW_LINE_BEFORE_PROMPT" -eq 1 ]; then
-            echo ""
-          fi
-        }
-        zstyle ':vcs_info:git:*' formats '%b '
-        setopt PROMPT_SUBST
-        PROMPT='[%F{4}%n%f] %F{4}%~%f %F{6}${"\${vcs_info_msg_0_}"}%f ${"\${prompt_newline}"} '
-
-        # shell cd whith yazi
-        yazi_dir_navigation() {
-          local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-          yazi "$@" --cwd-file="$tmp"
-          if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-            cd -- "$cwd"
-          fi
-          rm -f -- "$tmp"
-        }
-      '';
+      initContent = builtins.readFile ../dotfiles/zsh/.zshrc;
       oh-my-zsh = {
         enable = true;
       };
       shellAliases = {
         lf = "yazi_dir_navigation";
+        yz = "yazi_dir_navigation";
         clear = "unset NEW_LINE_BEFORE_PROMPT && clear";
       };
     };

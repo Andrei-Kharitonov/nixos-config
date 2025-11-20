@@ -1,0 +1,7 @@
+[mgr]
+ratio = [2, 5, 3]
+
+[opener]
+edit = [
+  { run = 'nvim "$@"', block = true },
+]
