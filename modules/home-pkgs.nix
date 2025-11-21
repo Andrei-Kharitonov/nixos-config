@@ -29,6 +29,7 @@
     yt-dlp # cli youtube video downloader
     fzf # fuzzy finder
     zoxide # smart cd
+    tree-sitter # parser (for nvim latex)
   ];
 
   programs = {
