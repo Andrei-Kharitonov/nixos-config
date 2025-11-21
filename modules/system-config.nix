@@ -83,6 +83,7 @@
   users.users = {
     andrei = {
       isNormalUser = true;
+      description = "Andrei";
       extraGroups = [
         "wheel"
         "networkmanager"

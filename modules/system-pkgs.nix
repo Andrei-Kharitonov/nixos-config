@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     vim # terminal text editor
     wget # cli utility for downloading from internet
+    htop # system monitoring
     nh # yet another nix helper
     nil # nix language server
     nixfmt-rfc-style # nix formater

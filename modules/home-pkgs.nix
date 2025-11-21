@@ -24,7 +24,6 @@
     git-graph # git graph branches
     tor-browser # anonymous browser
     flameshot # screenshot
-    konsave # kde config manager
     lazygit # git terminal ui
     yazi # tui file explorer
     yt-dlp # cli youtube video downloader
@@ -57,6 +56,14 @@
       enable = true;
     };
 
+    yazi = {
+      enable = true;
+      package = pkgs.yazi;
+      plugins = {
+        "full-border" = pkgs.yaziPlugins.full-border;
+      };
+    };
+
     nh = {
       enable = true;
       clean.enable = true;
@@ -84,6 +91,7 @@
         lf = "yazi_dir_navigation";
         yz = "yazi_dir_navigation";
         clear = "unset NEW_LINE_BEFORE_PROMPT && clear";
+        reset = "unset NEW_LINE_BEFORE_PROMPT && reset";
       };
     };
   };

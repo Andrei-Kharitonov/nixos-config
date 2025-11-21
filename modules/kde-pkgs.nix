@@ -16,12 +16,11 @@
     kdePackages.sddm-kcm # Configuration module for SDDM
     kdePackages.networkmanager-qt
 
+    konsave # kde config manager
     kdiff3 # Compares and merges 2 or 3 files or directories
     hardinfo2 # System information and benchmarks for Linux systems
     haruna # Open source video player built with Qt/QML and libmpv
-    xclip # Tool to access the X clipboard from a console application
     wayland-utils # Wayland utilities
-    wl-clipboard # Command-line copy/paste utilities for Wayland
   ];
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
