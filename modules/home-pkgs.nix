@@ -46,10 +46,11 @@
       themeFile = "Catppuccin-Mocha";
       settings = {
         remember_window_size = "no";
-        initial_window_width = "96c";
+        initial_window_width = "100c";
         initial_window_height = "32c";
         window_padding_width = "2 4";
         placement_strategy = "top-left";
+        modify_font = "cell_height 110%";
       };
     };
 
