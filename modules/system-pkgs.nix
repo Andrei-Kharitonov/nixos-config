@@ -34,7 +34,7 @@
       ];
     };
 
-    nekoray = {
+    throne = {
       enable = true;
       tunMode.enable = true;
     };

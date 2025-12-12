@@ -19,7 +19,7 @@
     qmk # keyboard firmware
     vial # qmk keyboard configuring
     telegram-desktop # messenger
-    discord # discord
+    # discord # discord
     wine # run windows programs
     git-graph # git graph branches
     tor-browser # anonymous browser

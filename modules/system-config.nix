@@ -102,4 +102,15 @@
   # Shell
   programs.zsh.enable = true;
   users.users.andrei.shell = pkgs.zsh;
+
+  # Vial udev rules
+  services.udev.packages = [
+    (pkgs.writeTextFile {
+      name = "vial-udev-rules";
+      destination = "/etc/udev/rules.d/59-vial.rules";
+      text = ''
+        KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+      '';
+    })
+  ];
 }
