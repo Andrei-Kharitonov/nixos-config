@@ -38,6 +38,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # GRUB menu
+  boot.loader.timeout = 5;
+
   # Enable bluetooth on power up by default
   hardware.bluetooth.powerOnBoot = true;
 

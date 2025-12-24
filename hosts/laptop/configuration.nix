@@ -35,6 +35,9 @@
 
   networking.hostName = "laptop";
 
+  # GRUB menu
+  boot.loader.timeout = 1;
+
   # Keyboard remap
   services.keyd = {
     enable = true;

@@ -8,7 +8,6 @@
 {
   # Boot efi
   boot.loader = {
-    timeout = 1;
     grub = {
       enable = true;
       efiSupport = true;
@@ -20,6 +19,7 @@
       efiSysMountPoint = "/boot";
     };
   };
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # Network
   networking = {
