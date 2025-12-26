@@ -39,7 +39,8 @@
   services.printing.enable = true;
 
   # GRUB menu
-  boot.loader.timeout = 5;
+  boot.loader.timeout = 4;
+  boot.loader.grub.splashImage = null;
 
   # Enable bluetooth on power up by default
   hardware.bluetooth.powerOnBoot = true;

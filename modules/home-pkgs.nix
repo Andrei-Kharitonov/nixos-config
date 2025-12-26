@@ -30,6 +30,11 @@
     fzf # fuzzy finder
     zoxide # smart cd
     tree-sitter # parser (for nvim latex)
+    tauon # music player
+    vlc # media player
+    puddletag # audio metadata editor
+    mpv # music cli
+    ffmpeg # media cli utils
   ];
 
   programs = {
