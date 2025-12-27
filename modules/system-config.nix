@@ -113,4 +113,18 @@
       '';
     })
   ];
+
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    user = "andrei";
+    group = "users";
+    dataDir = "/home/andrei";
+    configDir = "/home/andrei/.config/syncthing";
+    overrideDevices = false;
+    overrideFolders = false;
+  };
+  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 }
