@@ -58,6 +58,11 @@
     steam.gamescopeSession.enable = true;
     gamemode.enable = true;
 
+    # email client
+    thunderbird = {
+      enable = true;
+    };
+
     tmux = {
       enable = true;
       clock24 = true;

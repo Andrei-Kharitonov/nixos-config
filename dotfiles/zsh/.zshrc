@@ -11,7 +11,7 @@ precmd() {
 }
 zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
-PROMPT='[%F{4}%n%f] %F{4}%~%f %F{6}${vcs_info_msg_0_}%f ${prompt_newline} '
+PROMPT='[%F{4}%n@%m%f] %F{4}%~%f %F{6}${vcs_info_msg_0_}%f ${prompt_newline} '
 
 # shell cd with yazi
 yazi_dir_navigation() {

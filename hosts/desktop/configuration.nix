@@ -42,9 +42,6 @@
   boot.loader.timeout = 4;
   boot.loader.grub.splashImage = null;
 
-  # Enable bluetooth on power up by default
-  hardware.bluetooth.powerOnBoot = true;
-
   # Don't change this!
   system.stateVersion = "25.05"; # Did you read the comment?
 }
